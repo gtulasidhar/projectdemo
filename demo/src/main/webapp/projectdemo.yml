@@ -1,0 +1,17 @@
+ubuntu@ip-10-0-1-117:/etc/ansible$ cat projectdemo.yml
+- name: Ansible test
+  hosts: localhost
+  tasks:
+  - name: launching AWS instance using Ansible
+    ec2:
+            #key_name: aws_instance_Ansible
+      instance_type: t2.micro
+      image: ami-06cffe063efe892ad
+      region: us-west-2
+      wait: yes
+      group: default
+      count: 1
+      vpc_subnet_id: subnet-0bd06f9aaba9c9b1d
+      assign_public_ip: yes
+      aws_access_key: AKIAVZGU4GFKATXJG2H3
+      aws_secret_key: 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
